@@ -19,10 +19,14 @@ const userSchema = new mongoose.Schema({
     max: 1024,
     min: 8,
   },
-  date: {
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
+  updatedAt: {
     type: Date,
     default: Date.now(),
   },
 });
 
-export const UserModal = mongoose.model('userModal', userSchema);
+export const UserModel = mongoose.model('users', userSchema);
